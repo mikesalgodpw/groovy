@@ -1,27 +1,20 @@
-package com.mike
-
+package com.mike.webClient
 
 import groovy.json.JsonSlurper
 
-class GroovyMain2 {
-
-
-
+class MainWebClient {
 
     static void main(String[] args) {
-        println "hello, I am in GroovyMain2"
 
-/*
-        def postmanGet = new URL('https://postman-echo.com/get')
-        def getConnection = postmanGet.openConnection()
-        getConnection.requestMethod = 'GET'
-        assert getConnection.responseCode == 200
+        /*
+            def postmanGet = new URL('https://postman-echo.com/get')
+            def getConnection = postmanGet.openConnection()
+            getConnection.requestMethod = 'GET'
+            assert getConnection.responseCode == 200
 
-        println getConnection.getContent()
-        getConnection.re
-        */
-
-
+            println getConnection.getContent()
+            getConnection.re
+            */
 
 
         //def location = System.console().readLine( 'Location: ' )
@@ -46,7 +39,7 @@ class GroovyMain2 {
         //connection.setRequestProperty( 'User-Agent', 'groovy-2.4.4' )
         //connection.setRequestProperty( 'Accept', 'application/json' )
 
-        if ( connection.responseCode == 200 ) {
+        if (connection.responseCode == 200) {
             // get the JSON response
             def json = connection.inputStream.withCloseable { inStream ->
                 new JsonSlurper().parse(inStream as InputStream)
@@ -69,8 +62,7 @@ class GroovyMain2 {
         } else {
             println connection.responseCode + ": " + connection.inputStream.text
         }
-*/
+    */
         }
-
     }
 }
