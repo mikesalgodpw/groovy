@@ -1,0 +1,25 @@
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:01:51.562 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:13:38.035 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:14:18.096 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:14:18.188 [main]                              [/] INFO  myGroovyLogger - name: default
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:14:42.374 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:14:42.472 [main]                              [/] INFO  myGroovyLogger - name: This is default1 conf
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:14:47.232 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:14:47.310 [main]                              [/] INFO  myGroovyLogger - name: This is default1 conf
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:17:43.007 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:17:43.114 [main]                              [/] INFO  myGroovyLogger - name: This is default1 conf
+2021-04-20T10:17:43.115 [main]                              [/] INFO  myGroovyLogger - name: yes
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:31:33.259 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:31:33.346 [main]                              [/] INFO  myGroovyLogger - name: This is default1 conf
+2021-04-20T10:31:33.346 [main]                              [/] INFO  myGroovyLogger - name: yes
+#logback.classic pattern: %date{"yyyy-MM-dd'T'HH:mm:ss.SSS", UTC} %-35([%thread]) [%X{className}/%X{methodName}] %-5level %logger{0} - %msg%n
+2021-04-20T10:32:13.340 [main]                              [/] INFO  myGroovyLogger - This is debug msg
+2021-04-20T10:32:13.437 [main]                              [/] INFO  myGroovyLogger - name: This is default1 conf
+2021-04-20T10:32:13.437 [main]                              [/] INFO  myGroovyLogger - name: yes

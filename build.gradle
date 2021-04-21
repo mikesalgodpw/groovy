@@ -1,0 +1,108 @@
+/*plugins {
+    id 'groovy'
+}*/
+
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile group: 'com.typesafe', name: 'config', version: '1.3.2'
+
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.6'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.9'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.0.9'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+def var1 = '1.2'
+
+//external var
+ext {
+    springVersion = "3.1.0.RELEASE"
+    emailNotification = "build@master.org"
+}
+
+tasks.register('task1') {
+    doLast {
+        println 'Hello world!'
+        println 'I am in task1'
+        //println ${var1}
+        println var1
+        println springVersion
+        println emailNotification
+    }
+}
+
+tasks.register('task2') {
+    dependsOn tasks.task1
+    doLast {
+        println "I am in task2"
+    }
+}
+
+tasks.register('task3') {
+    doLast {
+        println 'I\'m in task3'
+    }
+}
+
+/*
+tasks.register('task_groovy1') {
+    doLast {
+        GroovyMain g = new GroovyClass()
+        g.printSomething()
+    }
+}
+*/
+
+task taskFromClass1(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'GroovyMain'
+
+    // arguments to pass to the application
+    args 'appArg1'
+}
+
+task taskFromClass2(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.mike.GroovyMain2'
+
+    // arguments to pass to the application
+    args 'appArg1'
+}
+
+
+task verifyReleasePatch(type: CreateStartScripts) {
+    applicationName = 'verify-release-patch'
+    classpath = jar.outputs.files
+    mainClassName = 'com.mike.GroovyMain2'
+
+    //original, does NOT have the folder 'bin'
+    outputDir = file('build/bin')
+}
+
+
+
+
+
+/*
+task fooTask << {
+    GroovyMain g = new GroovyClass()
+    g.printSomething()
+}
+*/
+
+
+defaultTasks 'task1', 'task3'
